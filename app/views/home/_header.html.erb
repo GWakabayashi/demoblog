@@ -10,12 +10,14 @@
         <li class="nav-item">
           <%= link_to 'Home', root_path, class:"nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to 'Blog', posts_show_path, class:"nav-link" %>
+        </li>
 
         <% if user_signed_in? %>
           <li class="nav-item">
-          <%= link_to 'Blog', root_path, class:"nav-link" %>
-        </li>
-
+            <%= link_to 'New post', posts_create_path, class:"nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete, class:"nav-link" %>
           </li>
