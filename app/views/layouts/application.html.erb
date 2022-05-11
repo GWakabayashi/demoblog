@@ -19,10 +19,21 @@
 
     <%= render 'home/header' %>
 
+    <% if notice %>
+
+    <div class="alert alert-warning" role="alert">
+      <strong>Holy guacamole! </strong><%= notice %>
+    </div>
+    <% end %>
+
+    
+
     <div class="container">
       <br>
       <%= yield %>
     </div>
+
+    <%= render 'home/footer' %>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
