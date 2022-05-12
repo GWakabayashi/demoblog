@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/create'
-  get 'posts/edit'
+  resources :posts
+  #resources :posts, only: [:new, :create, :index]
   devise_for :users
   get 'home/about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
