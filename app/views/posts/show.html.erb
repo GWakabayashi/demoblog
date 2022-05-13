@@ -1,5 +1,7 @@
 <% content_for :page_title, @post.title %>
 
+<br><br>
+
 <section>
     <div class="container">
 
@@ -23,7 +25,27 @@
 
 <section>
     <div class="container">
-        Comments
+        <h3 class='text-muted fw-light'><strong><%= @post.comments.count %></strong> comments</h3>
+
+        <br>
+        
+        <div>
+
+            <%= render @post.comments %>
+
+            <% if user_signed_in? %>
+                <h3>Leave a reply</h3>
+                <br>
+                <div class='mb-3'>
+                    <%= render 'comments/form' %>
+                </div>
+            <% else %>
+                <p>
+                    <%= link_to "Log In", new_user_session_path,class:'text-decoration-none' %> or 
+                    <%= link_to "Sign Up", new_user_registration_path, class:'text-decoration-none' %> to post a new comment
+                </p>
+            <% end %>
+        </div>
     </div>
 </section>
 

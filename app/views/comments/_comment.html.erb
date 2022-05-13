@@ -1,0 +1,19 @@
+<div class="card">
+    <article>
+        <div class="card-body">
+            <p>
+                <strong><%= comment.name %></strong>
+            </p>
+            <p>
+                <%= simple_format comment.comment %>
+            </p>
+
+            <div class="text-end">
+            <%= button_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
+            </div>
+        </div>
+    </article>
+</div>
+
+<br>
+
